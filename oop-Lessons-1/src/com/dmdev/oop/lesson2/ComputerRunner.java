@@ -19,6 +19,7 @@ public class ComputerRunner {
 
 		computer3.printState();
 		computer3.load("PS_3");
+		
 	}
 
 }
