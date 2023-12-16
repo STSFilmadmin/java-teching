@@ -30,6 +30,21 @@ public class Computer {
 		System.out.println("ПК " + computerName + " завантажений...\n");
 	}
 
+	void load() {
+
+		System.out.println("ПК  завантажений...\n");
+		
+	}
+	
+	void load(String computerName, boolean open) {
+
+		
+		if (open) {
+			System.out.println("кришка пк відкрита...");
+		}
+		System.out.println("ПК " + computerName + " завантажений...\n");
+	}
+	
 	void printState() {
 		System.out.println("SSD = " + ssd);
 		System.out.println("Ram = " + ram);
