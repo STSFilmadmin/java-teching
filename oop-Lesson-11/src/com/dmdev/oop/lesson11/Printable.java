@@ -16,8 +16,8 @@ public interface Printable {
 
     void print();
 
-    /* privat */
-    static 	int generateRandom() {
+    
+    static int generateRandom() {
 	return RANDON.nextInt();
     }
 }
