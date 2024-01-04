@@ -1,24 +1,16 @@
 package com.dmdev.oop.lesson15;
 
-public abstract class Hero {
+import com.dmdev.oop.lesson18.weapon.Weapon;
+
+public abstract class Hero<T extends Weapon> {
 
     private String name;
     private int damage;
-    private int heat;
-    
+    private T weapon;
 
-    public int getHeat() {
-        return heat;
-    }
-
-    public void setHeat(int heat) {
-        this.heat = heat;
-    }
-
-    public Hero(String name, int damage, int heat ) {
+    public Hero(String name, int damage) {
         this.name = name;
         this.damage = damage;
-        this.heat = heat ;
     }
 
     public abstract void attackEnemy(Enemy enemy);
@@ -31,7 +23,11 @@ public abstract class Hero {
         return damage;
     }
 
-    protected static boolean isAlive() {
-	return false;
+    public T getWeapon() {
+        return weapon;
+    }
+
+    public void setWeapon(T weapon) {
+        this.weapon = weapon;
     }
 }

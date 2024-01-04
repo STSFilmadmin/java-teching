@@ -1,11 +1,13 @@
 package com.dmdev.oop.lesson15;
 
-public class Archer extends Hero {
+import com.dmdev.oop.lesson18.weapon.RangeWeapon;
+
+public class Archer<T extends RangeWeapon> extends Hero<T> {
     private Wolf wolf;
 
-    public Archer(String name, int damage, int heat) {
-	super(name, damage, heat);
-	this.wolf = new Wolf("бобик ", 10);
+    public Archer(String name, int damage) {
+        super(name, damage);
+        this.wolf = new Wolf("Бобік", 7);
     }
 
     @Override

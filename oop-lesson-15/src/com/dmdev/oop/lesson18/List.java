@@ -3,47 +3,43 @@ package com.dmdev.oop.lesson18;
 import java.util.Iterator;
 
 public class List<T> implements Iterable<T> {
-    private T[] object;
+
+    private T[] objects;
     private int size;
 
     public List(int initialSize) {
-	this.object = (T[]) new Object[initialSize];
-
+        this.objects = (T[]) new Object[initialSize];
     }
 
     public void add(T element) {
-
-	object[size++] = element;
-
+        objects[size++] = element;
     }
 
     public T get(int index) {
-	return object[index];
+        return objects[index];
     }
 
     public int getSize() {
-	return size;
+        return size;
     }
 
     @Override
     public Iterator<T> iterator() {
-	// TODO Auto-generated method stub
-	return null;
+        return new ListIterator();
     }
-    	private class ListIterator implements Iterator<T>{
 
-	    @Override
-	    public boolean hasNext() {
-		// TODO Auto-generated method stub
-		return false;
-	    }
+    private class ListIterator implements Iterator<T> {
 
-	    @Override
-	    public T next() {
-		// TODO Auto-generated method stub
-		return null;
-	    }
-    	    
-    	}
+        private int currentIndex;
 
+        @Override
+        public boolean hasNext() {
+            return currentIndex < size;
+        }
+
+        @Override
+        public T next() {
+            return objects[currentIndex++];
+        }
+    }
 }
